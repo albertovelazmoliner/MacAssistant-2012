@@ -27,13 +27,12 @@
 
 @implementation ContentController
 
-@synthesize playerSearchResults, selectedRows, selectedPlayer;
+@synthesize playerSearchResults, selectedRows, selectedPlayer, playersTableView, controller;
 
 - (id)init
 {
 	[super init];
     selectedRows = [[NSMutableDictionary alloc] init];
-    [controller setContent:self];
     
 	return self;
 }

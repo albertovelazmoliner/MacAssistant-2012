@@ -37,21 +37,18 @@
 	return self;
 }
 
-- (void) setContentController: (ContentController *) ctrl {
-    [self setContent:ctrl];
-}
-
 - (void)awakeFromNib {
 	[loader setUsesThreadedAnimation:YES];
     [loaderContainer setFrame:NSRectFromCGRect(CGRectMake(loaderContainer.frame.origin.x, 
                                          -(loaderContainer.frame.size.height), 
                                          loaderContainer.frame.size.width, 
                                          loaderContainer.frame.size.height))];
+    [content setController:self];
 }
 
 - (BOOL)validateToolbarItem:(NSToolbarItem *)theItem {
     if ([[theItem itemIdentifier] isEqualTo:[loadGameToolbarItem itemIdentifier]]) {
-        return (!dataLoaded && idle);
+        return (idle);
     }
     else {
         return YES;
@@ -133,12 +130,14 @@
 }
 
 - (void) resetdb {
+    [[[self content] playerSearchResults] removeAllObjects];
+    //[[self content] setPlayerSearchResults:[[NSMutableArray alloc] init]];
+    //[[[self content] playersTableView] reloadData];
+    
     [[self database] release];
     [self setDatabase:[[Database alloc] init]];
     [database setController:self];
     [self setDataLoaded:FALSE];
-    [[self content] setPlayerSearchResults:[[NSMutableArray alloc] init]];
-    
     [sidebar unsetBadge:@"1.1"];
 }
 
@@ -168,7 +167,8 @@
     theAnim = [[NSViewAnimation alloc] initWithViewAnimations:[NSArray
                                                                arrayWithObjects:firstViewDict, nil]];
     
-    [theAnim setDuration: 0.5];
+    [theAnim setAnimationBlockingMode:NSAnimationNonblockingThreaded];
+    [theAnim setDuration: 0.3];
     [theAnim setAnimationCurve:NSAnimationEaseIn];
     // Run the animation.
     [theAnim startAnimation];
@@ -203,7 +203,8 @@
     theAnim = [[NSViewAnimation alloc] initWithViewAnimations:[NSArray
                                                                arrayWithObjects:firstViewDict, nil]];
     
-    [theAnim setDuration: 0.3];
+    [theAnim setAnimationBlockingMode:NSAnimationNonblockingThreaded];
+    [theAnim setDuration: 0.1];
     [theAnim setAnimationCurve:NSAnimationEaseIn];
     // Run the animation.
     [theAnim startAnimation];

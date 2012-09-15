@@ -21,13 +21,13 @@
 	BOOL                                idle, dataLoaded, compressed;
 	unsigned short                      gameDBVersion;
 	Database                            *database;
-    ContentController                   *content;
 	FMDate                              *currentDate, *startDate;
 	NSThread                            *gameDBThread;
 	NSThread                            *parseGraphicsThread;
 	int                                 databaseChanges, timesSaved, startBuildVersion, saveStartOffset, currentBuildVersion, gameID;
 	NSMutableDictionary                 *infoStrings;
     
+    IBOutlet ContentController          *content;
 	IBOutlet NSProgressIndicator        *loader;
 	IBOutlet Sidebar                    *sidebar;
 	IBOutlet NSWindow                   *mainWin;
@@ -56,7 +56,7 @@
 @property(copy, readwrite) FMDate *currentDate;
 
 @property(assign, readwrite) Database *database;
-@property(assign, readwrite) ContentController *content;
+@property(assign, readwrite) IBOutlet ContentController *content;
 @property(assign, readwrite) BOOL idle, dataLoaded;
 @property(assign, readwrite) unsigned short gameDBVersion;
 

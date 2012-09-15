@@ -15,9 +15,9 @@
     NSMutableArray                          *selectedPlayer;
 	NSMutableDictionary						*selectedRows;
     NSThread                                *searchThread;
+    Controller                              *controller;
     
     IBOutlet NSArrayController              *pSearchResultsController;
-    IBOutlet Controller						*controller;
 	IBOutlet NSPredicateEditor				*playerFilter, *statsFilter;
 	IBOutlet NSTableView					*playersTableView;
 	IBOutlet NSPredicateEditorRowTemplate	*predicateRow;
@@ -38,8 +38,10 @@
 - (IBAction)clearSearchTerms:(id)sender;
 - (BOOL)shouldCloseSheet:(id)sender;
 
-@property(readwrite, copy) NSMutableArray		*playerSearchResults;
+@property(readwrite, assign) Controller         *controller;
+@property(nonatomic, retain) NSMutableArray		*playerSearchResults;
 @property(readwrite, copy) NSMutableArray		*selectedPlayer;
 @property(readwrite, copy) NSMutableDictionary	*selectedRows;
+@property(nonatomic, retain) IBOutlet NSTableView *playersTableView;
 
 @end
