@@ -3,6 +3,14 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "-[Controller validateToolbarItem:]:Controller.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "theItem">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "+[Loader(ClubLoader) readClubFromData:atOffset:version:]:ClubLoader.m">
       </ContextState>
       <ContextState
@@ -36,19 +44,19 @@
          contextName = "+[Loader(CityLoader) readCityFromData:atOffset:]:CityLoader.m">
       </ContextState>
       <ContextState
-         contextName = "-[Controller initGame:]:Controller.m">
+         contextName = "__23-[Controller loadGame:]_block_invoke_0:Controller.m">
          <PersistentStrings>
+            <PersistentString
+               value = "dataLoaded">
+            </PersistentString>
             <PersistentString
                value = "database">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "__23-[Controller loadGame:]_block_invoke_0:Controller.m">
+         contextName = "-[Controller initGame:]:Controller.m">
          <PersistentStrings>
-            <PersistentString
-               value = "dataLoaded">
-            </PersistentString>
             <PersistentString
                value = "database">
             </PersistentString>

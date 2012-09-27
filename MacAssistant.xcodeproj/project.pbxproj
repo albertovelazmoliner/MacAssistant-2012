@@ -843,6 +843,8 @@
 		E29AC77E1221AE8D00097EB5 /* SXImageXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E29AC77A1221AE8D00097EB5 /* SXImageXMLParser.m */; };
 		E29AC77F1221AE8D00097EB5 /* SXzlib.m in Sources */ = {isa = PBXBuildFile; fileRef = E29AC77C1221AE8D00097EB5 /* SXzlib.m */; };
 		E29AC7841221AEC400097EB5 /* LangDB.m in Sources */ = {isa = PBXBuildFile; fileRef = E29AC7831221AEC400097EB5 /* LangDB.m */; };
+		E2A0ACBA161367D5003DADE9 /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = E2A0ACB9161367D5003DADE9 /* refresh.png */; };
+		E2A0ACBB161367D5003DADE9 /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = E2A0ACB9161367D5003DADE9 /* refresh.png */; };
 		E2A4852815DE8218004A26B5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		E2A4852915DE8218004A26B5 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
 		E2A4852A15DE8218004A26B5 /* Elastic Generic Black.icns in Resources */ = {isa = PBXBuildFile; fileRef = E2EF01871229472100118797 /* Elastic Generic Black.icns */; };
@@ -2095,6 +2097,7 @@
 		E29AC77C1221AE8D00097EB5 /* SXzlib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXzlib.m; sourceTree = "<group>"; };
 		E29AC7821221AEC300097EB5 /* LangDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LangDB.h; sourceTree = "<group>"; };
 		E29AC7831221AEC400097EB5 /* LangDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LangDB.m; sourceTree = "<group>"; };
+		E2A0ACB9161367D5003DADE9 /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh.png; sourceTree = "<group>"; };
 		E2A4867A15DE8218004A26B5 /* MacAssistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacAssistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2A4867C15DE8218004A26B5 /* MacAssistant10.6-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "MacAssistant10.6-Info.plist"; path = "/Users/Tom/Projects/MacAssistant-2012/MacAssistant10.6-Info.plist"; sourceTree = "<absolute>"; };
 		E2EB22D2123CE75600F9DE7A /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search.png; sourceTree = "<group>"; };
@@ -2258,6 +2261,7 @@
 				E2864E3F15C2A88700E5F46B /* status_ctr.png */,
 				E2864E4015C2A88700E5F46B /* status_inj.png */,
 				E2864E4115C2A88700E5F46B /* status_loa.png */,
+				E2A0ACB9161367D5003DADE9 /* refresh.png */,
 				E2864E4215C2A88700E5F46B /* status_lst.png */,
 				E2864E4315C2A88700E5F46B /* status_sus.png */,
 				E2864E4415C2A88700E5F46B /* status_trn.png */,
@@ -3341,7 +3345,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0440;
+				LastUpgradeCheck = 0450;
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "MacAssistant" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -3644,6 +3648,7 @@
 				E271961E15E6514D00547633 /* 10star.png in Resources */,
 				E271962115E659AC00547633 /* FYR of Macedonia.png in Resources */,
 				E271962715E659CE00547633 /* The Netherlands.png in Resources */,
+				E2A0ACBA161367D5003DADE9 /* refresh.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3930,6 +3935,7 @@
 				E271961F15E6514D00547633 /* 10star.png in Resources */,
 				E271962215E659AC00547633 /* FYR of Macedonia.png in Resources */,
 				E271962815E659CE00547633 /* The Netherlands.png in Resources */,
+				E2A0ACBB161367D5003DADE9 /* refresh.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4585,6 +4591,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				CONFIGURATION_BUILD_DIR = "$(PROJECT_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
 				CONFIGURATION_TEMP_DIR = "$(PROJECT_TEMP_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
@@ -4615,6 +4622,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				CONFIGURATION_BUILD_DIR = "$(PROJECT_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
 				CONFIGURATION_TEMP_DIR = "$(PROJECT_TEMP_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";

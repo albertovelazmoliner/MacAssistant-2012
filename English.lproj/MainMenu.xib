@@ -2,13 +2,13 @@
 <archive type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="7.10">
 	<data>
 		<int key="IBDocument.SystemTarget">1080</int>
-		<string key="IBDocument.SystemVersion">12B19</string>
-		<string key="IBDocument.InterfaceBuilderVersion">2549</string>
-		<string key="IBDocument.AppKitVersion">1187</string>
-		<string key="IBDocument.HIToolboxVersion">624.00</string>
+		<string key="IBDocument.SystemVersion">12C54</string>
+		<string key="IBDocument.InterfaceBuilderVersion">2840</string>
+		<string key="IBDocument.AppKitVersion">1187.34</string>
+		<string key="IBDocument.HIToolboxVersion">625.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin</string>
-			<string key="NS.object.0">2549</string>
+			<string key="NS.object.0">2840</string>
 		</object>
 		<object class="NSArray" key="IBDocument.IntegratedClassDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -492,6 +492,7 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>15856F42-A425-48B4-9EB0-5535121EF31C</string>
 							<string>4FD543A0-7347-48DF-A641-47E495A24B57</string>
+							<string>59DC329C-B061-4691-9168-453682AB8FDB</string>
 							<string>NSToolbarCustomizeToolbarItem</string>
 							<string>NSToolbarFlexibleSpaceItem</string>
 							<string>NSToolbarSeparatorItem</string>
@@ -532,6 +533,28 @@
 								<object class="NSCustomResource" key="NSToolbarItemImage">
 									<string key="NSClassName">NSImage</string>
 									<string key="NSResourceName">Elastic Generic Black</string>
+								</object>
+								<nil key="NSToolbarItemTarget"/>
+								<nil key="NSToolbarItemAction"/>
+								<string key="NSToolbarItemMinSize">{0, 0}</string>
+								<string key="NSToolbarItemMaxSize">{0, 0}</string>
+								<bool key="NSToolbarItemEnabled">YES</bool>
+								<bool key="NSToolbarItemAutovalidates">YES</bool>
+								<int key="NSToolbarItemTag">-1</int>
+								<bool key="NSToolbarIsUserRemovable">YES</bool>
+								<int key="NSToolbarItemVisibilityPriority">0</int>
+							</object>
+							<object class="NSToolbarItem" id="309354283">
+								<object class="NSMutableString" key="NSToolbarItemIdentifier">
+									<characters key="NS.bytes">59DC329C-B061-4691-9168-453682AB8FDB</characters>
+								</object>
+								<string key="NSToolbarItemLabel">Reload Game</string>
+								<string key="NSToolbarItemPaletteLabel">Reload Game</string>
+								<string key="NSToolbarItemToolTip"/>
+								<nil key="NSToolbarItemView"/>
+								<object class="NSCustomResource" key="NSToolbarItemImage">
+									<string key="NSClassName">NSImage</string>
+									<string key="NSResourceName">refresh</string>
 								</object>
 								<nil key="NSToolbarItemTarget"/>
 								<nil key="NSToolbarItemAction"/>
@@ -646,7 +669,7 @@
 							</object>
 						</object>
 					</object>
-					<object class="NSArray" key="NSToolbarIBAllowedItems">
+					<object class="NSMutableArray" key="NSToolbarIBAllowedItems">
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<reference ref="812868219"/>
 						<reference ref="440885179"/>
@@ -654,13 +677,17 @@
 						<reference ref="1039328907"/>
 						<reference ref="699139901"/>
 						<reference ref="1008666185"/>
+						<reference ref="309354283"/>
 					</object>
-					<object class="NSArray" key="NSToolbarIBDefaultItems">
+					<object class="NSMutableArray" key="NSToolbarIBDefaultItems">
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<reference ref="901470952"/>
+						<reference ref="309354283"/>
 						<reference ref="440885179"/>
 						<reference ref="1039328907"/>
 						<reference ref="440885179"/>
+						<reference ref="812868219"/>
+						<reference ref="812868219"/>
 						<reference ref="812868219"/>
 						<reference ref="812868219"/>
 					</object>
@@ -11533,6 +11560,22 @@
 					<int key="connectionID">3273</int>
 				</object>
 				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">reloadGameToolbarItem</string>
+						<reference key="source" ref="930970356"/>
+						<reference key="destination" ref="309354283"/>
+					</object>
+					<int key="connectionID">3275</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">reloadGame:</string>
+						<reference key="source" ref="930970356"/>
+						<reference key="destination" ref="309354283"/>
+					</object>
+					<int key="connectionID">3276</int>
+				</object>
+				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">contentObject: database</string>
 						<reference key="source" ref="645721911"/>
@@ -14229,6 +14272,7 @@
 							<reference ref="1008666185"/>
 							<reference ref="1039328907"/>
 							<reference ref="440885179"/>
+							<reference ref="309354283"/>
 						</object>
 						<reference key="parent" ref="972006081"/>
 					</object>
@@ -19046,6 +19090,11 @@
 						<reference key="object" ref="249071796"/>
 						<reference key="parent" ref="20265798"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">3274</int>
+						<reference key="object" ref="309354283"/>
+						<reference key="parent" ref="751809862"/>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -19676,6 +19725,7 @@
 					<string>3270.IBPluginDependency</string>
 					<string>3271.IBPluginDependency</string>
 					<string>3272.IBPluginDependency</string>
+					<string>3274.IBPluginDependency</string>
 					<string>371.IBPluginDependency</string>
 					<string>371.IBWindowTemplateEditedContentRect</string>
 					<string>371.NSWindowTemplate.visibleAtLaunch</string>
@@ -20418,6 +20468,7 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>{{485, 28}, {986, 652}}</string>
 					<integer value="1"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -20549,7 +20600,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">3273</int>
+			<int key="maxID">3276</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -20711,10 +20762,12 @@
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>loadGame:</string>
+							<string>reloadGame:</string>
 							<string>showPreferences:</string>
 						</object>
 						<object class="NSArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 						</object>
@@ -20724,12 +20777,17 @@
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>loadGame:</string>
+							<string>reloadGame:</string>
 							<string>showPreferences:</string>
 						</object>
 						<object class="NSArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<object class="IBActionInfo">
 								<string key="name">loadGame:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">reloadGame:</string>
 								<string key="candidateClassName">id</string>
 							</object>
 							<object class="IBActionInfo">
@@ -20749,6 +20807,7 @@
 							<string>loaderContainer</string>
 							<string>mainWin</string>
 							<string>prefWindow</string>
+							<string>reloadGameToolbarItem</string>
 							<string>sidebar</string>
 							<string>statusText</string>
 						</object>
@@ -20761,6 +20820,7 @@
 							<string>MAView</string>
 							<string>NSWindow</string>
 							<string>PreferencesController</string>
+							<string>NSToolbarItem</string>
 							<string>Sidebar</string>
 							<string>NSTextField</string>
 						</object>
@@ -20776,6 +20836,7 @@
 							<string>loaderContainer</string>
 							<string>mainWin</string>
 							<string>prefWindow</string>
+							<string>reloadGameToolbarItem</string>
 							<string>sidebar</string>
 							<string>statusText</string>
 						</object>
@@ -20808,6 +20869,10 @@
 							<object class="IBToOneOutletInfo">
 								<string key="name">prefWindow</string>
 								<string key="candidateClassName">PreferencesController</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">reloadGameToolbarItem</string>
+								<string key="candidateClassName">NSToolbarItem</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">sidebar</string>
@@ -20934,73 +20999,6 @@
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
-					<string key="className">NSDocument</string>
-					<object class="NSMutableDictionary" key="actions">
-						<bool key="EncodedWithXMLCoder">YES</bool>
-						<object class="NSArray" key="dict.sortedKeys">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>printDocument:</string>
-							<string>revertDocumentToSaved:</string>
-							<string>runPageLayout:</string>
-							<string>saveDocument:</string>
-							<string>saveDocumentAs:</string>
-							<string>saveDocumentTo:</string>
-						</object>
-						<object class="NSArray" key="dict.values">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>id</string>
-							<string>id</string>
-							<string>id</string>
-							<string>id</string>
-							<string>id</string>
-							<string>id</string>
-						</object>
-					</object>
-					<object class="NSMutableDictionary" key="actionInfosByName">
-						<bool key="EncodedWithXMLCoder">YES</bool>
-						<object class="NSArray" key="dict.sortedKeys">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>printDocument:</string>
-							<string>revertDocumentToSaved:</string>
-							<string>runPageLayout:</string>
-							<string>saveDocument:</string>
-							<string>saveDocumentAs:</string>
-							<string>saveDocumentTo:</string>
-						</object>
-						<object class="NSArray" key="dict.values">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<object class="IBActionInfo">
-								<string key="name">printDocument:</string>
-								<string key="candidateClassName">id</string>
-							</object>
-							<object class="IBActionInfo">
-								<string key="name">revertDocumentToSaved:</string>
-								<string key="candidateClassName">id</string>
-							</object>
-							<object class="IBActionInfo">
-								<string key="name">runPageLayout:</string>
-								<string key="candidateClassName">id</string>
-							</object>
-							<object class="IBActionInfo">
-								<string key="name">saveDocument:</string>
-								<string key="candidateClassName">id</string>
-							</object>
-							<object class="IBActionInfo">
-								<string key="name">saveDocumentAs:</string>
-								<string key="candidateClassName">id</string>
-							</object>
-							<object class="IBActionInfo">
-								<string key="name">saveDocumentTo:</string>
-								<string key="candidateClassName">id</string>
-							</object>
-						</object>
-					</object>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/NSDocument.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
 					<string key="className">PreferencesController</string>
 					<string key="superclassName">NSWindowController</string>
 					<object class="NSMutableDictionary" key="outlets">
@@ -21086,6 +21084,7 @@
 				<string>NSMenuMixedState</string>
 				<string>NSToolbarCustomize</string>
 				<string>defaultperson_male</string>
+				<string>refresh</string>
 				<string>search</string>
 			</object>
 			<object class="NSArray" key="dict.values">
@@ -21097,6 +21096,7 @@
 				<string>{10, 3}</string>
 				<string>{32, 32}</string>
 				<string>{180, 180}</string>
+				<string>{100, 100}</string>
 				<string>{128, 128}</string>
 			</object>
 		</object>

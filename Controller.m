@@ -50,6 +50,9 @@
     if ([[theItem itemIdentifier] isEqualTo:[loadGameToolbarItem itemIdentifier]]) {
         return (idle);
     }
+    else if ([[theItem itemIdentifier] isEqualTo:[reloadGameToolbarItem itemIdentifier]]) {
+        return ([self dataLoaded]);
+    }
     else {
         return YES;
     }
@@ -105,6 +108,7 @@
 		if (result == NSFileHandlingPanelOKButton) {
             [self setIdle:FALSE];
             [self validateToolbarItem:loadGameToolbarItem];
+            [self validateToolbarItem:reloadGameToolbarItem];
             [self setStatusViewTextFieldText:@"Loading..."];
             [self revealLoaderContainer];
             
@@ -129,11 +133,31 @@
 	}];
 }
 
+- (IBAction) reloadGame: (id)sender {
+    if ([[self gamePath] length] > 0) {
+        [self setIdle:FALSE];
+        [self validateToolbarItem:loadGameToolbarItem];
+        [self validateToolbarItem:reloadGameToolbarItem];
+        [self setStatusViewTextFieldText:@"Loading..."];
+        [self revealLoaderContainer];
+        [self resetdb];
+        
+        // Setup GameDB Thread
+        gameDBThread = [[NSThread alloc] initWithTarget:self selector:@selector(initGame:) object:gamePath];
+        
+        // Graphics Thread HERE
+        if ([[NSUserDefaults standardUserDefaults] boolForKey:@"parseGraphics"]==TRUE) { [parseGraphicsThread start]; }
+        
+        [gameDBThread start];
+        [gameDBThread release];
+    }
+}
+
 - (void) resetdb {
     [[[self content] playerSearchResults] removeAllObjects];
     //[[self content] setPlayerSearchResults:[[NSMutableArray alloc] init]];
     //[[[self content] playersTableView] reloadData];
-    
+    [appDlg setDataLoaded:FALSE];
     [[self database] release];
     [self setDatabase:[[Database alloc] init]];
     [database setController:self];

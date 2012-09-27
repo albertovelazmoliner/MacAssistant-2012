@@ -35,11 +35,13 @@
     IBOutlet NSTextField                *statusText;
     IBOutlet MAView                     *loaderContainer;
     IBOutlet NSToolbarItem              *loadGameToolbarItem;
+    IBOutlet NSToolbarItem              *reloadGameToolbarItem;
     IBOutlet PreferencesController      *prefWindow;
 }
 
 - (IBAction) showPreferences:(id)sender;
 - (IBAction) loadGame: (id) sender;
+- (IBAction) reloadGame: (id)sender;
 - (void) resetdb;
 - (void) initGame: (NSString *)path;
 - (void) populateOutlineContents:(id)inObject;
