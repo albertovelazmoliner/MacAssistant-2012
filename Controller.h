@@ -11,6 +11,7 @@
 #import "MacAssistantAppDelegate.h"
 #import "MAView.h"
 #import "PreferencesController.h"
+#import "GraphicsController.h"
 
 @class Database;
 @class ContentController;
@@ -26,6 +27,7 @@
 	NSThread                            *parseGraphicsThread;
 	int                                 databaseChanges, timesSaved, startBuildVersion, saveStartOffset, currentBuildVersion, gameID;
 	NSMutableDictionary                 *infoStrings;
+    GraphicsController                  *graphics;
     
     IBOutlet ContentController          *content;
 	IBOutlet NSProgressIndicator        *loader;
@@ -58,6 +60,7 @@
 @property(copy, readwrite) FMDate *currentDate;
 
 @property(assign, readwrite) Database *database;
+@property(assign, readwrite) GraphicsController *graphics;
 @property(assign, readwrite) IBOutlet ContentController *content;
 @property(assign, readwrite) BOOL idle, dataLoaded;
 @property(assign, readwrite) unsigned short gameDBVersion;

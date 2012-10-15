@@ -840,7 +840,6 @@
 		E29AC7701221AE7500097EB5 /* TeamContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = E29AC7681221AE7500097EB5 /* TeamContainer.m */; };
 		E29AC7711221AE7500097EB5 /* TransferInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = E29AC76A1221AE7500097EB5 /* TransferInfo.m */; };
 		E29AC77D1221AE8D00097EB5 /* SupportFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = E29AC7781221AE8D00097EB5 /* SupportFunctions.m */; };
-		E29AC77E1221AE8D00097EB5 /* SXImageXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E29AC77A1221AE8D00097EB5 /* SXImageXMLParser.m */; };
 		E29AC77F1221AE8D00097EB5 /* SXzlib.m in Sources */ = {isa = PBXBuildFile; fileRef = E29AC77C1221AE8D00097EB5 /* SXzlib.m */; };
 		E29AC7841221AEC400097EB5 /* LangDB.m in Sources */ = {isa = PBXBuildFile; fileRef = E29AC7831221AEC400097EB5 /* LangDB.m */; };
 		E2A0ACBA161367D5003DADE9 /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = E2A0ACB9161367D5003DADE9 /* refresh.png */; };
@@ -1130,7 +1129,6 @@
 		E2A4864315DE8218004A26B5 /* TeamContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = E29AC7681221AE7500097EB5 /* TeamContainer.m */; };
 		E2A4864415DE8218004A26B5 /* TransferInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = E29AC76A1221AE7500097EB5 /* TransferInfo.m */; };
 		E2A4864515DE8218004A26B5 /* SupportFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = E29AC7781221AE8D00097EB5 /* SupportFunctions.m */; };
-		E2A4864615DE8218004A26B5 /* SXImageXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E29AC77A1221AE8D00097EB5 /* SXImageXMLParser.m */; };
 		E2A4864715DE8218004A26B5 /* SXzlib.m in Sources */ = {isa = PBXBuildFile; fileRef = E29AC77C1221AE8D00097EB5 /* SXzlib.m */; };
 		E2A4864815DE8218004A26B5 /* LangDB.m in Sources */ = {isa = PBXBuildFile; fileRef = E29AC7831221AEC400097EB5 /* LangDB.m */; };
 		E2A4864915DE8218004A26B5 /* FMFArchiver.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EF00FA12292AF700118797 /* FMFArchiver.m */; };
@@ -1185,6 +1183,8 @@
 		E2FA5EDB15E28D8E008C82DE /* MAImageTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FA5ED915E28D8E008C82DE /* MAImageTextCell.m */; };
 		E2FA5EDE15E29B24008C82DE /* England.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FA5EDD15E29B24008C82DE /* England.png */; };
 		E2FA5EDF15E29B24008C82DE /* England.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FA5EDD15E29B24008C82DE /* England.png */; };
+		E2FB0FFA162C4DBB00DBB072 /* GraphicsController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FB0FF9162C4DBB00DBB072 /* GraphicsController.m */; };
+		E2FB0FFB162C4DBB00DBB072 /* GraphicsController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FB0FF9162C4DBB00DBB072 /* GraphicsController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -2091,8 +2091,6 @@
 		E29AC7751221AE7C00097EB5 /* LanguageIDs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LanguageIDs.h; sourceTree = "<group>"; };
 		E29AC7771221AE8D00097EB5 /* SupportFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SupportFunctions.h; sourceTree = "<group>"; };
 		E29AC7781221AE8D00097EB5 /* SupportFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SupportFunctions.m; sourceTree = "<group>"; };
-		E29AC7791221AE8D00097EB5 /* SXImageXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXImageXMLParser.h; sourceTree = "<group>"; };
-		E29AC77A1221AE8D00097EB5 /* SXImageXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXImageXMLParser.m; sourceTree = "<group>"; };
 		E29AC77B1221AE8D00097EB5 /* SXzlib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXzlib.h; sourceTree = "<group>"; };
 		E29AC77C1221AE8D00097EB5 /* SXzlib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXzlib.m; sourceTree = "<group>"; };
 		E29AC7821221AEC300097EB5 /* LangDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LangDB.h; sourceTree = "<group>"; };
@@ -2118,6 +2116,8 @@
 		E2FA5ED815E28D8E008C82DE /* MAImageTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAImageTextCell.h; sourceTree = "<group>"; };
 		E2FA5ED915E28D8E008C82DE /* MAImageTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAImageTextCell.m; sourceTree = "<group>"; };
 		E2FA5EDD15E29B24008C82DE /* England.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = England.png; sourceTree = "<group>"; };
+		E2FB0FF8162C4DBB00DBB072 /* GraphicsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GraphicsController.h; path = "Main Classes/GraphicsController.h"; sourceTree = "<group>"; };
+		E2FB0FF9162C4DBB00DBB072 /* GraphicsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GraphicsController.m; path = "Main Classes/GraphicsController.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2338,6 +2338,8 @@
 				E29AC7831221AEC400097EB5 /* LangDB.m */,
 				E26586771236CDF400545D25 /* ContentController.h */,
 				E26586781236CDF400545D25 /* ContentController.m */,
+				E2FB0FF8162C4DBB00DBB072 /* GraphicsController.h */,
+				E2FB0FF9162C4DBB00DBB072 /* GraphicsController.m */,
 			);
 			name = "Main Classes";
 			sourceTree = "<group>";
@@ -3004,8 +3006,6 @@
 				E29AC77B1221AE8D00097EB5 /* SXzlib.h */,
 				E29AC7771221AE8D00097EB5 /* SupportFunctions.h */,
 				E29AC7781221AE8D00097EB5 /* SupportFunctions.m */,
-				E29AC7791221AE8D00097EB5 /* SXImageXMLParser.h */,
-				E29AC77A1221AE8D00097EB5 /* SXImageXMLParser.m */,
 				E29AC77C1221AE8D00097EB5 /* SXzlib.m */,
 			);
 			name = "Support Classes";
@@ -4212,7 +4212,6 @@
 				E29AC7701221AE7500097EB5 /* TeamContainer.m in Sources */,
 				E29AC7711221AE7500097EB5 /* TransferInfo.m in Sources */,
 				E29AC77D1221AE8D00097EB5 /* SupportFunctions.m in Sources */,
-				E29AC77E1221AE8D00097EB5 /* SXImageXMLParser.m in Sources */,
 				E29AC77F1221AE8D00097EB5 /* SXzlib.m in Sources */,
 				E29AC7841221AEC400097EB5 /* LangDB.m in Sources */,
 				E2EF00FB12292AF700118797 /* FMFArchiver.m in Sources */,
@@ -4250,6 +4249,7 @@
 				E2F2F5D415C1D2F100BF7661 /* PreferencesController.m in Sources */,
 				E2864E5215C2AA0000E5F46B /* PlayerStatusTransformer.m in Sources */,
 				E2FA5EDA15E28D8E008C82DE /* MAImageTextCell.m in Sources */,
+				E2FB0FFA162C4DBB00DBB072 /* GraphicsController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4523,7 +4523,6 @@
 				E2A4864315DE8218004A26B5 /* TeamContainer.m in Sources */,
 				E2A4864415DE8218004A26B5 /* TransferInfo.m in Sources */,
 				E2A4864515DE8218004A26B5 /* SupportFunctions.m in Sources */,
-				E2A4864615DE8218004A26B5 /* SXImageXMLParser.m in Sources */,
 				E2A4864715DE8218004A26B5 /* SXzlib.m in Sources */,
 				E2A4864815DE8218004A26B5 /* LangDB.m in Sources */,
 				E2A4864915DE8218004A26B5 /* FMFArchiver.m in Sources */,
@@ -4561,6 +4560,7 @@
 				E2A4866F15DE8218004A26B5 /* PreferencesController.m in Sources */,
 				E2A4867015DE8218004A26B5 /* PlayerStatusTransformer.m in Sources */,
 				E2FA5EDB15E28D8E008C82DE /* MAImageTextCell.m in Sources */,
+				E2FB0FFB162C4DBB00DBB072 /* GraphicsController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

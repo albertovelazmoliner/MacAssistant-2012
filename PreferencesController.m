@@ -8,10 +8,6 @@
 
 #import "PreferencesController.h"
 
-@interface PreferencesController ()
-
-@end
-
 @implementation PreferencesController
 
 - (id)init
@@ -22,8 +18,16 @@
             [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"loadLangDB"];
         }
         
+        if ([[NSUserDefaults standardUserDefaults] objectForKey:@"parseGraphics"] == nil) {
+            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"parseGraphics"];
+        }
+        
         if ([[NSUserDefaults standardUserDefaults] objectForKey:@"langDBPath"] == nil) {
             [[NSUserDefaults standardUserDefaults] setValue:@"/Users" forKey:@"langDBPath"];
+        }
+        
+        if (YES) { //[[NSUserDefaults standardUserDefaults] objectForKey:@"graphicsLocation"] == nil) {
+            [[NSUserDefaults standardUserDefaults] setValue:[NSString stringWithFormat:@"%@/%@", NSHomeDirectory(), @"/Documents/Sports Interactive/Football Manager 2012/graphics"] forKey:@"graphicsLocation"];
         }
         
         if ([[NSUserDefaults standardUserDefaults] objectForKey:@"selectedCurrency"] == nil) {
@@ -37,6 +41,7 @@
 - (void)windowDidLoad
 {
     [super windowDidLoad];
+    [self init];
 }
 
 @end

@@ -100,6 +100,7 @@
 - (int)age;
 - (NSString *)ageString;
 - (NSImage *)playerGrowthPotential;
+- (NSImage *)personPortrait;
 - (float)playerGrowthPotentialVal;
 - (int)contractWage;
 

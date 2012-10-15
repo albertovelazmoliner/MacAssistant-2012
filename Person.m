@@ -250,6 +250,22 @@ unknownData1, unknownChar1, theNewFirstName, theNewSurname, theNewCommonName, tr
     return icon;
 }
 
+- (NSImage *)personPortrait {
+    // Get the image path from the GraphicsController reference of the Controller
+    NSImage *portraitImage = [NSImage alloc];
+    
+    NSString *portraitPath = [[[controller graphics] personPhotos] objectForKey:[NSNumber numberWithInt:UID]];
+    
+    if ([[NSFileManager defaultManager] fileExistsAtPath:portraitPath]) {
+        [portraitImage initWithContentsOfFile:portraitPath];
+    }
+    else {
+        // Show the default image
+        [portraitImage initWithContentsOfFile:[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"defaultperson_male.png"]];
+    }
+    return portraitImage;
+}
+
 - (NSString *)nationString {
 	NSMutableString *string = [[NSMutableString alloc] init];
 	if (personData && ([personData nationID] > -1)) {

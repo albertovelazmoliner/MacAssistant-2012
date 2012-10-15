@@ -22,7 +22,7 @@
 
 @implementation Controller
 
-@synthesize gamePath, dataLoaded, gameDBVersion, database, currentDate, idle, loader, prefWindow, content;
+@synthesize gamePath, dataLoaded, gameDBVersion, database, currentDate, idle, loader, prefWindow, content, graphics;
 
 - (id)init
 {
@@ -31,6 +31,8 @@
 	infoStrings = [[NSMutableDictionary alloc] init];
 	database = [[Database alloc] init];
 	[database setController:self];
+    
+    graphics = [[GraphicsController alloc] init];
 	
 	idle = TRUE;
 	
@@ -124,8 +126,13 @@
 			// Setup GameDB Thread
 			gameDBThread = [[NSThread alloc] initWithTarget:self selector:@selector(initGame:) object:gamePath];
             
+            // Setup Graphics Thread
+            parseGraphicsThread = [[NSThread alloc] initWithTarget:self selector:@selector(parseGraphics) object:nil];
+            
 			// Graphics Thread HERE
-			if ([[NSUserDefaults standardUserDefaults] boolForKey:@"parseGraphics"]==TRUE) { [parseGraphicsThread start]; }
+			if ([[NSUserDefaults standardUserDefaults] boolForKey:@"parseGraphics"] == YES) {
+                [parseGraphicsThread start];
+            }
 			
 			[gameDBThread start];
             [gameDBThread release];
@@ -145,6 +152,9 @@
         // Setup GameDB Thread
         gameDBThread = [[NSThread alloc] initWithTarget:self selector:@selector(initGame:) object:gamePath];
         
+        // Setup Graphics Thread
+        parseGraphicsThread = [[NSThread alloc] initWithTarget:self selector:@selector(parseGraphics) object:nil];
+        
         // Graphics Thread HERE
         if ([[NSUserDefaults standardUserDefaults] boolForKey:@"parseGraphics"]==TRUE) { [parseGraphicsThread start]; }
         
@@ -158,6 +168,7 @@
     //[[self content] setPlayerSearchResults:[[NSMutableArray alloc] init]];
     //[[[self content] playersTableView] reloadData];
     [appDlg setDataLoaded:FALSE];
+    [[self graphics] release];
     [[self database] release];
     [self setDatabase:[[Database alloc] init]];
     [database setController:self];
@@ -263,6 +274,7 @@
 	unsigned int i;
 	unsigned int byteOffset = 0; // Location to read data from
 	unsigned int fileOffset = 0;
+    unsigned int gameDirOffset = 0;
 	
 	//Load file in memory
 	NSData *gameData = [[NSData alloc] initWithContentsOfFile: path];
@@ -325,18 +337,32 @@
 	char marker;
     int counter = 0;
     NSString *dbFolder = @"/Volumes";
+    NSString *gameFolder = @"/Volumes";
+    BOOL continueAdding = YES;
     
 	[fileData getBytes:&marker range:NSMakeRange(fileOffset,1)];	fileOffset += 1;
 	
 	// Marker indicates subdirectory. Once reached, read.
 	while (marker==6)
 	{
+        gameDirOffset = fileOffset;
 		// Read subdirectory
         if (counter == 0) {
             [FMString readFromData:fileData atOffset:&fileOffset];
         }
         else {
             dbFolder = [dbFolder stringByAppendingString:[NSString stringWithFormat:@"/%@", [FMString readFromData:fileData atOffset:&fileOffset]]];
+            
+            // Also start building the game directory path
+            // The [FMString method skips increases the offset, so reset the offest to the starting value when we're done
+            if (continueAdding) {
+                NSString *currentFolder = [FMString readFromData:fileData atOffset:&gameDirOffset];
+                gameFolder = [gameFolder stringByAppendingString:[NSString stringWithFormat:@"/%@", currentFolder]];
+                // Stop when we find the "football manager" folder
+                if ([currentFolder isEqualToString:@"football manager 2012"]) {
+                    continueAdding = NO;
+                }
+            }
         }
 		[fileData getBytes:&marker range:NSMakeRange(fileOffset,1)];	
 		fileOffset += 1;
@@ -349,12 +375,11 @@
         // We need to check here if the lang_db.dat file exists!
         dbFolder = [dbFolder stringByAppendingString:@"/lang_db.dat"];
         if ([[NSFileManager defaultManager] fileExistsAtPath:dbFolder]) {
-            // Since we found lang_db.dat make sure it's stored in the NSUserDefaults
-            if ([[[NSUserDefaults standardUserDefaults] stringForKey:@"langDBPath"] length] < 2) {
-                [[NSUserDefaults standardUserDefaults] setValue:dbFolder forKey:@"langDBPath"];
-            }
+            // Since we found lang_db.dat make sure the game Path is stored in the User Defaults
+            // and always override the user's selection to be safe
+            [[NSUserDefaults standardUserDefaults] setValue:gameFolder forKey:@"langDBPath"];
             
-            [database setStatus:NSLocalizedString(@"loading lang_db.dat", @"editor status")];
+            [database setStatus:NSLocalizedString(@"Loading lang_db.dat", @"editor status")];
             [database readLangDB:dbFolder];
         }
 	}
@@ -585,6 +610,15 @@
                                      people]];
     
     [pool release];
+}
+
+- (void)parseGraphics
+{
+	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+	
+	[graphics parseGraphics];
+	
+	[pool release];
 }
 						
 @end

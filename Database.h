@@ -8,13 +8,11 @@
 
 #import <Cocoa/Cocoa.h>
 #import "LangDB.h"
-#import "SXImageXMLParser.h"
 #import "Controller.h"
 
 @interface Database : NSObject {
 	Controller *controller;
 	LangDB *langDB;
-	SXImageXMLParser *graphics;
 	
 	BOOL langDBLoaded;
 	
@@ -40,7 +38,6 @@
 - (id)readGameDB:(NSData *)data atOffset:(unsigned int *)byteOffset;
 - (void)saveGameDB:(NSMutableData *)data;
 - (void)readLangDB:(NSString *)path;
-- (void)parseGraphics:(NSString *)path;
 
 @property(copy,readwrite) NSMutableArray *goodAlliterations, *badAlliterations, *awards,
 *cities, *clubs, *media, *languages, *currencies, *continents, *injuries, *firstNames, 
@@ -53,8 +50,7 @@
 @property(assign,readwrite) int unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 @property(assign,readwrite) BOOL langDBLoaded;
 @property(assign,readwrite) LangDB *langDB;
-@property(assign,readwrite) SXImageXMLParser *graphics;
-@property(readwrite,copy) NSData *unknownData1, *unknownData2, *unknownData3, *unknownData4, *unknownData5, 
+@property(readwrite,copy) NSData *unknownData1, *unknownData2, *unknownData3, *unknownData4, *unknownData5,
 *unknownData6, *unknownData7;
 
 - (NSArray *)formationStrings;

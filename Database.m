@@ -74,7 +74,7 @@
 @implementation Database
 
 @synthesize goodAlliterations, badAlliterations, awards, cities, langDB, currentRecord, 
-totalRecords, status, clubs, graphics, media, languages, currencies, continents,
+totalRecords, status, clubs, media, languages, currencies, continents,
 injuries, firstNames, surnames, commonNames, sponsors, stadiums, stadiumChanges,
 teams, localAreas, stageNames, weather, descriptions, people, personStats, playerStats,
 nonPlayerStats, competitions, nations, controller, langDBLoaded, competitionHistories,
@@ -89,7 +89,6 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	[self setCurrentRecord:0];
 	[self setTotalRecords:1];
 	
-	// graphics = [[SXImageXMLParser alloc] init];
 	firstNames = [[NSMutableArray alloc] init];
 	surnames = [[NSMutableArray alloc] init];
 	commonNames = [[NSMutableArray alloc] init];
@@ -99,7 +98,6 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 
 - (void)dealloc
 {
-	// [graphics release];
 	[firstNames release];
 	[surnames release];
 	[commonNames release];
@@ -307,7 +305,6 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 		}
 		else { 
 			[object setController:controller];
-			[object setLogoPath:[[graphics clubLogos] objectForKey:[NSNumber numberWithInt:[object UID]]]];
 			[[object teamContainer] setController:controller];
 			[tempArray addObject:object];
 		}
@@ -2080,15 +2077,6 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 		[self setLangDB:[LangDBLoader readFromFile:path]];
 	}
 	langDBLoaded = YES;
-}
-
-- (void)parseGraphics:(NSString *)path
-{
-	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-	
-	[graphics parsePathForGraphics:[path stringByExpandingTildeInPath]];
-	
-	[pool drain];
 }
 
 - (void)assignAwardNames:(NSString *)path
